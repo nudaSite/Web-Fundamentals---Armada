@@ -1,0 +1,116 @@
+// Task 1: Inventory Tracker
+let inventory = ["apple", "banana", "cherry", "date", "elderberry"];
+let inventoryCount = [10, 15, 5, 20, 7];
+
+for (let i = 0; i < inventory.length; i++) {
+  console.log(`${inventory[i]}: ${inventoryCount[i]}`);
+}
+
+// Output:
+    // apple: 10
+    // banana: 15
+    // cherry: 5
+    // date: 20
+    // elderberry: 7
+
+// Explanation:
+    // The inventory array stores a list of fruit names.
+    // The inventoryCount array holds the corresponding quantity for each fruit.
+    // The for loop runs from 0 to inventory.length - 1.
+    // In each iteration:
+        // inventory[i] accesses the fruit name.
+        // inventoryCount[i] accesses the corresponding quantity.
+        // console.log prints both in the format: "fruit: quantity".
+
+
+
+// Task 2:  Alphabetical Sorting
+let words = ["zebra", "apple", "mango", "cherry", "banana"];
+
+for (let i = 0; i < words.length; i++) {
+  for (let j = i + 1; j < words.length; j++) {
+    if (words[i] > words[j]) {
+      let temp = words[i];
+      words[i] = words[j];
+      words[j] = temp;
+    }
+  }
+}
+
+console.log(words);
+
+// Output:
+    // ["apple", "banana", "cherry", "mango", "zebra"]
+
+// Explanation:
+    // The words array sorts in alphabetical order using a nested loop with the bubble sort algorithm.
+    // The outer loop (i) picks each word one by one.
+    // The inner loop (j) compares words[i] with words[j] (the next words in the list).
+    // If words[i] > words[j] (i.e., the current word comes after the next word in alphabetical order), they swap places.
+    // The process continues until the entire list is sorted from A → Z.
+
+
+
+// Task 3: Unique Array Builder
+let uniqueNumbers = [];
+
+while (uniqueNumbers.length < 10) {
+  let randomNumber = Math.floor(Math.random() * 20) + 1;
+
+  // Check if the randomNumber already exists in the array
+  let exists = false;
+  for (let i = 0; i < uniqueNumbers.length; i++) {
+    if (uniqueNumbers[i] === randomNumber) {
+      exists = true;
+      break;
+    }
+  }
+
+  // If it doesn't exist, add it to the array
+  if (!exists) {
+    uniqueNumbers.push(randomNumber);
+  }
+}
+
+console.log(uniqueNumbers);
+
+// Sample Output:
+    // [3, 15, 7, 12, 19, 1, 9, 14, 5, 8]
+
+// Explanation:
+    // The program initializes an empty array uniqueNumbers to store the unique random numbers.
+    // A while loop runs until the array contains 10 elements.
+    // It generates a random number between 1 and 20 using Math.floor(Math.random() * 20) + 1.
+    // It checks if the number exists in uniqueNumbers by iterating through the array.
+        // If found, it sets exists = true and breaks the loop.
+    // If the number is not in the array, the program adds it using push().
+    // The process repeats until uniqueNumbers contains 10 distinct numbers.
+    // Finally, it prints the array.
+
+
+
+// Task 4: Triangle Checker
+let sideA = 7;
+let sideB = 10;
+let sideC = 5;
+
+if (sideA + sideB > sideC && sideB + sideC > sideA && sideA + sideC > sideB) {
+  console.log(`The sides ${sideA}, ${sideB}, and ${sideC} form a valid triangle.`);
+} else {
+  console.log(`The sides ${sideA}, ${sideB}, and ${sideC} do not form a valid triangle.`);
+}
+
+// Output:
+    // The sides 7, 10, and 5 form a valid triangle.
+
+// Explanation:
+    // The program initializes three variables sideA, sideB, and sideC, representing the lengths of a triangle's sides.
+    // It checks the triangle inequality theorem, which states that a valid triangle exists if the sum of any two sides is greater than the third side:
+        // sideA + sideB > sideC
+        // sideB + sideC > sideA
+        // sideA + sideC > sideB
+    // If all conditions are met, the program prints that the sides form a valid triangle.
+    // If any condition fails, the program prints that the sides do not form a valid triangle.
+
+
+
